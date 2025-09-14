@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Col, Form, Input, InputRef, Row } from 'antd';
+import { Col, Form, InputRef, Row } from 'antd';
 import { PatternFormat } from "react-number-format";
 import { useRegistrationStore } from '@/stores/registrationStore';
 import { useRouter } from 'next/navigation';
@@ -8,6 +8,8 @@ import { useCallback, useEffect, useRef } from 'react';
 import { ContactData } from '@/types/registration';
 import { useSaveStep } from '@/hooks/useSaveStep';
 import { onlyNumbers } from '@/utils';
+import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 
 export function Step3() {
     const [form] = Form.useForm();
@@ -75,12 +77,12 @@ export function Step3() {
             <Form.Item>
                 <Row gutter={[16, 16]}>
                     <Col xs={24} md={4}>
-                        <Button loading={isPending} block type="primary" htmlType="submit" >
+                        <Button loading={isPending} block htmlType="submit" >
                             Avançar
                         </Button>
                     </Col>
                     <Col xs={24} md={4}>
-                        <Button loading={isPending} block color='default' variant='filled' onClick={handleGoBack}  >
+                        <Button loading={isPending} block type='default' onClick={handleGoBack}  >
                             Voltar
                         </Button>
                     </Col>

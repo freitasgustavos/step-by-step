@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback } from 'react';
-import { Button, Flex, Result } from 'antd';
+import { Flex, Result } from 'antd';
 import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/Button';
 
 export default function NotFound() {
     const router = useRouter();
@@ -18,7 +19,7 @@ export default function NotFound() {
                 title="404"
                 subTitle="Desculpe, a página que você está procurando não existe."
                 extra={
-                    <Button onClick={handleHome} type="primary" size="large">
+                    <Button onClick={handleHome}>
                         Ir para a Home
                     </Button>
                 }

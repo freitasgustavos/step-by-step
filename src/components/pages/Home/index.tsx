@@ -1,10 +1,11 @@
 "use client";
 
-import { Button, Card, Flex, Result, theme } from "antd";
+import { Card, Flex, Result, theme } from "antd";
 import { ProfileOutlined } from '@ant-design/icons';
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { useRegistrationStore } from "@/stores/registrationStore";
+import { Button } from "@/components/ui/Button";
 
 export const Home = () => {
     const { token } = theme.useToken();
@@ -23,7 +24,7 @@ export const Home = () => {
                     title="Bem-vindo ao Sistema de Cadastro"
                     subTitle="Para continuar, precisamos de algumas informações. O processo é rápido e dividido em etapas simples para facilitar."
                     extra={
-                        <Button onClick={handleStep} type="primary" size="large">
+                        <Button onClick={handleStep}>
                             {submissionId ? 'Continuar Cadastro' : 'Iniciar Cadastro'}
                         </Button>
                     }

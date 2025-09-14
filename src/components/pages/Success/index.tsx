@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect } from 'react';
-import { Button, Card, Flex, Result } from 'antd';
+import { Card, Flex, Result } from 'antd';
 import { useRouter } from 'next/navigation';
 import { useRegistrationStore } from '@/stores/registrationStore';
+import { Button } from '@/components/ui/Button';
 
 export default function Success() {
     const resetStore = useRegistrationStore((state) => state.reset);
@@ -25,7 +26,7 @@ export default function Success() {
                     title="Cadastro Concluído com Sucesso!"
                     subTitle="Seu registro foi finalizado. Em breve você receberá mais informações no seu e-mail."
                     extra={
-                        <Button onClick={handleHome} type="primary" size="large">
+                        <Button onClick={handleHome}>
                             Ir para a Home
                         </Button>
                     }

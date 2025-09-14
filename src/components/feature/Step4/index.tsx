@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { Button, Form, Input, Spin, Row, Col, InputRef, App } from 'antd';
+import { Form, Spin, Row, Col, InputRef, App } from 'antd';
 import { useRouter } from 'next/navigation';
 import { PatternFormat } from "react-number-format";
 
@@ -10,6 +10,8 @@ import { AddressData } from '@/types/registration';
 import { useSaveStep } from '@/hooks/useSaveStep';
 import { cepService } from '@/services/cepService';
 import { onlyNumbers } from '@/utils';
+import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 
 export function Step4() {
     const { notification } = App.useApp();
@@ -138,12 +140,12 @@ export function Step4() {
             <Form.Item>
                 <Row gutter={[16, 16]}>
                     <Col xs={24} md={4}>
-                        <Button loading={isPending} block type="primary" htmlType="submit" >
+                        <Button loading={isPending} block htmlType="submit" >
                             Avançar
                         </Button>
                     </Col>
                     <Col xs={24} md={4}>
-                        <Button loading={isPending} block color='default' variant='filled' onClick={handleGoBack}  >
+                        <Button loading={isPending} block type='default' onClick={handleGoBack}  >
                             Voltar
                         </Button>
                     </Col>

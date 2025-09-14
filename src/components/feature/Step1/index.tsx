@@ -1,11 +1,13 @@
 'use client';
 
-import { Button, Col, Form, Input, Row } from 'antd';
+import { Col, Form, Row } from 'antd';
 import { useRegistrationStore } from '@/stores/registrationStore';
 import { useRouter } from 'next/navigation';
 import { IdentificationData } from '@/types/registration';
 import { useSaveStep } from '@/hooks/useSaveStep';
 import { useCallback, useEffect } from 'react';
+import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 
 export function Step1() {
     const [form] = Form.useForm();
@@ -59,7 +61,7 @@ export function Step1() {
             <Form.Item>
                 <Row>
                     <Col xs={24} md={4}>
-                        <Button loading={isPending} block type="primary" htmlType="submit" >
+                        <Button loading={isPending} block htmlType="submit" >
                             Avançar
                         </Button>
                     </Col>

@@ -1,11 +1,12 @@
 'use client';
 
-import { Button, Descriptions, Space, Row, Col } from 'antd';
+import { Descriptions, Space, Row, Col } from 'antd';
 import { useRegistrationStore } from '@/stores/registrationStore';
 import { useRouter } from 'next/navigation';
 import { formatCep, formatDocument, formatPhone } from '@/utils';
 import { useCallback, useEffect } from 'react';
 import { useCompleteStep } from '@/hooks/useCompleteStep';
+import { Button } from '@/components/ui/Button';
 
 export function Step5() {
     const router = useRouter();
@@ -43,12 +44,12 @@ export function Step5() {
 
             <Row gutter={[16, 16]}>
                 <Col xs={24} md={4}>
-                    <Button loading={isPending} block type="primary" onClick={() => completeStep()} size="large" >
+                    <Button loading={isPending} block onClick={() => completeStep()}>
                         Concluir
                     </Button>
                 </Col>
                 <Col xs={24} md={4}>
-                    <Button loading={isPending} block type="default" onClick={handleGoBack} size="large" >
+                    <Button loading={isPending} block type="default" onClick={handleGoBack}  >
                         Voltar
                     </Button>
                 </Col>
