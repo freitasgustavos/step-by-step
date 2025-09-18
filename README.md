@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Step-by-Step Registration App
 
-## Getting Started
+Este projeto é um sistema de cadastro multi-etapas (step-by-step) desenvolvido em Next.js e React, utilizando Ant Design para a interface e Zustand para gerenciamento de estado. O objetivo é proporcionar uma experiência de cadastro fluida, validada e responsiva, com persistência de dados entre as etapas.
 
-First, run the development server:
+## ✨ Funcionalidades
+
+- Cadastro dividido em 5 etapas: Identificação, Documento, Contato, Endereço e Revisão.
+- Máscara dinâmica para CPF/CNPJ.
+- Validação de campos em cada etapa.
+- Persistência dos dados entre as etapas usando Zustand.
+- Navegação protegida: o usuário só avança se preencher corretamente cada etapa.
+- Exibição dos dados formatados na revisão.
+- Integração com API para salvar e finalizar o cadastro.
+- Interface responsiva e moderna com Ant Design.
+
+## 🚀 Tecnologias
+
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Ant Design](https://ant.design/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Axios](https://axios-http.com/)
+- [TanStack React Query](https://tanstack.com/query/latest)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 📁 Estrutura de Pastas
+
+```
+src/
+  app/                # Entrypoint Next.js
+  components/
+    feature/          # Componentes de cada etapa do cadastro
+    layout/           # Layouts e cabeçalhos
+    pages/            # Páginas principais
+  lib/                # Funções utilitárias e formatadores
+  providers/          # Providers globais (AntD, React Query)
+  services/           # Serviços de API
+  stores/             # Zustand store
+  styles/             # Estilos globais
+  types/              # Tipos TypeScript
+```
+
+## ⚙️ Requisitos
+
+- Node.js >= 18.x
+- Yarn ou npm
+- Variáveis de ambiente:
+
+Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
+```
+
+Altere o valor conforme o endereço da sua API.
+
+## 🛠️ Instalação
+
+```bash
+git clone https://github.com/freitasgustavos/step-by-step.git
+cd step-by-step
+npm install
+# ou
+yarn install
+```
+
+## ▶️ Rodando o Projeto
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
